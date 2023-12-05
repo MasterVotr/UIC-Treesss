@@ -1,2 +1,2 @@
-# UIC-Treesss
-Aalto yliopisto - User Inteface Construction - Treesss
+# Treesss
+## Aalto university - User Inteface Construction - Treesss
