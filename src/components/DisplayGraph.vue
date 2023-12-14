@@ -1,11 +1,17 @@
 <template>
-  <div>
-    <label for="attribute">View by</label>
-    <select id="attribute" class="attribute" name="attribute" @change="updateAttribute">
-      <option value = Type>Type of tree</option>
-      <option value = Motivation>Motivation</option>
-    </select>
-    <div id="anychart-container" style="width: 700px; height: 500px;"></div>
+  <div class="display">
+    <div class="column left">
+      <div class="label-container">
+        <label for="attribute">View by</label>
+      </div>
+      <div class="select-container">
+        <select id="attribute" class="attribute" name="attribute" @change="updateAttribute">
+          <option value="Type">Type of tree</option>
+          <option value="Motivation">Motivation</option>
+        </select>
+      </div>
+    </div>
+    <div class="column right" id="anychart-container"></div>
   </div>
 </template>
 
@@ -179,5 +185,24 @@ export default {
 </script>
 
 <style scoped>
+  * {
+    box-sizing: border-box;
+  }
+  .display {
+    display: flex;
+  }
+  .column {
+    padding: 10px;
+    height: 500px;
+  }
+  .left {
+    width: 200px;
+  }
+  .right {
+    width: 700px;
+  }
 
+  .label-container {
+    margin-bottom: 5px; /* Add some spacing between label and select */
+  }
 </style>
