@@ -1,105 +1,108 @@
 <template>
-  <div class="body">
+  <div class="wrapper">
     <div class="header">
       header
     </div>
-    <div class="filters">
-      <div class="filter">
-        <button class="id_button" @click="display_dropdown_id">{{id_button_text}}
-          <img class="icon" v-if="!idIsOpen" src="../assets/chevron-down-solid.svg">
-          <img class="icon" v-if="idIsOpen" src="../assets/chevron-up-solid.svg">
-        </button>
-        <input class="dropdown" v-on:keyup.enter="onEnter_id" v-if="idIsOpen" v-model="tree_id" placeholder="Enter tree id"/>
-      </div>
-      <div class="filter">
-        <button @click="display_dropdown_owner">{{owner_button_text}}
-          <img class="icon" v-if="!ownerIsOpen" src="../assets/chevron-down-solid.svg">
-          <img class="icon" v-if="ownerIsOpen" src="../assets/chevron-up-solid.svg">
-        </button>
-        <input class="dropdown" v-on:keyup.enter="onEnter_owner" v-if="ownerIsOpen" v-model="tree_owner" placeholder="Enter tree owner"/>
-      </div>
-      <div class="filter">
-        <button @click="display_dropdown_type">{{ tree_type }}
-          <img class="icon" v-if="!typeIsOpen" src="../assets/chevron-down-solid.svg">
-          <img class="icon" v-if="typeIsOpen" src="../assets/chevron-up-solid.svg">
-        </button>
-        <div class="dropdown_type" v-if="typeIsOpen">
-          <div class="row_type">
-            <button @click="select_type('maple')">
-              <img src="../assets/maple.jpg">
-              maple
-            </button>
-            <button @click="select_type('oak')">
-              <img src="../assets/oak.jpg">
-              oak
-            </button>
+    <div class="body">
+      <div class="filters">
+        <div class="filter">
+          <button class="id_button" @click="display_dropdown_id">{{id_button_text}}
+            <img class="icon" v-if="!idIsOpen" src="../assets/chevron-down-solid.svg">
+            <img class="icon" v-if="idIsOpen" src="../assets/chevron-up-solid.svg">
+          </button>
+          <input class="dropdown" v-on:keyup.enter="onEnter_id" v-if="idIsOpen" v-model="tree_id" placeholder="Enter tree id"/>
+        </div>
+        <div class="filter">
+          <button @click="display_dropdown_owner">{{owner_button_text}}
+            <img class="icon" v-if="!ownerIsOpen" src="../assets/chevron-down-solid.svg">
+            <img class="icon" v-if="ownerIsOpen" src="../assets/chevron-up-solid.svg">
+          </button>
+          <input class="dropdown" v-on:keyup.enter="onEnter_owner" v-if="ownerIsOpen" v-model="tree_owner" placeholder="Enter tree owner"/>
+        </div>
+        <div class="filter">
+          <button @click="display_dropdown_type">{{ tree_type }}
+            <img class="icon" v-if="!typeIsOpen" src="../assets/chevron-down-solid.svg">
+            <img class="icon" v-if="typeIsOpen" src="../assets/chevron-up-solid.svg">
+          </button>
+          <div class="dropdown_type" v-if="typeIsOpen">
+            <div class="row_type">
+              <button @click="select_type('maple')">
+                <img src="../assets/maple.jpg">
+                maple
+              </button>
+              <button @click="select_type('oak')">
+                <img src="../assets/oak.jpg">
+                oak
+              </button>
+            </div>
+            <div class="row_type">
+              <button @click="select_type('ginko')">
+                <img src="../assets/ginkgo.jpg">
+                ginko
+              </button>
+              <button @click="select_type('mulberry')">
+                <img src="../assets/mulberry.jpg">
+                mulberry
+              </button>
+            </div>
+            <div class="row_type">
+              <button @click="select_type('olive')">
+                <img src="../assets/olive.avif">
+                olive
+              </button>
+              <button @click="select_type('pines')">
+                <img src="../assets/pines.jpg">
+                pines
+              </button>
+            </div>
+            <div class="row_type">
+              <button @click="select_type('willow')">
+                <img src="../assets/willow.jpg">
+                willow
+              </button>
+              <button @click="select_type('other')">
+                <img src="../assets/logo.svg">
+                other
+              </button>
+            </div>
+            <button @click="select_type('type')">reset filter</button>
           </div>
-          <div class="row_type">
-            <button @click="select_type('ginko')">
-              <img src="../assets/ginkgo.jpg">
-              ginko
-            </button>
-            <button @click="select_type('mulberry')">
-              <img src="../assets/mulberry.jpg">
-              mulberry
-            </button>
+        </div>
+        <div class="filter">
+          <button @click="display_dropdown_location">{{location_button_text}}
+            <img class="icon" v-if="!locationIsOpen" src="../assets/chevron-down-solid.svg">
+            <img class="icon" v-if="locationIsOpen" src="../assets/chevron-up-solid.svg">
+          </button>
+          <input class="dropdown" v-on:keyup.enter="onEnter_location" v-if="locationIsOpen" v-model="tree_location" placeholder="Enter tree location"/>
+        </div>
+        <div class="filter">
+          <button @click="display_dropdown_age">{{ age_button_text }}
+            <img class="icon" v-if="!ageIsOpen" src="../assets/chevron-down-solid.svg">
+            <img class="icon" v-if="ageIsOpen" src="../assets/chevron-up-solid.svg">
+          </button>
+          <input class="dropdown" v-on:keyup.enter="onEnter_age" v-if="ageIsOpen" v-model="tree_age" placeholder="Enter tree age"/>
+        </div>
+        <div class="filter">
+          <button @click="display_dropdown_motivation">{{motivation}}
+            <img class="icon" v-if="!motivationIsOpen" src="../assets/chevron-down-solid.svg">
+            <img class="icon" v-if="motivationIsOpen" src="../assets/chevron-up-solid.svg">
+          </button>
+          <div class="dropdown_motivation" v-if="motivationIsOpen">
+            <button class="motivation_option" @click="select_motivation('motivation')">reset filter</button>
+            <button class="motivation_option" @click="select_motivation('gift')">gift</button>
+            <button class="motivation_option" @click="select_motivation('good will')">good will</button>
+            <button class="motivation_option" @click="select_motivation('agriculture')">agriculture</button>
+            <button class="motivation_option" @click="select_motivation('decoration')">decoration</button>
+            <button class="motivation_option" @click="select_motivation('other')">other</button>
           </div>
-          <div class="row_type">
-            <button @click="select_type('olive')">
-              <img src="../assets/olive.avif">
-              olive
-            </button>
-            <button @click="select_type('pines')">
-              <img src="../assets/pines.jpg">
-              pines
-            </button>
-          </div>
-          <div class="row_type">
-            <button @click="select_type('willow')">
-              <img src="../assets/willow.jpg">
-              willow
-            </button>
-            <button @click="select_type('other')">
-              <img src="../assets/logo.svg">
-              other
-            </button>
-          </div>
-          <button @click="select_type('type')">reset filter</button>
         </div>
       </div>
-      <div class="filter">
-        <button @click="display_dropdown_location">{{location_button_text}}
-          <img class="icon" v-if="!locationIsOpen" src="../assets/chevron-down-solid.svg">
-          <img class="icon" v-if="locationIsOpen" src="../assets/chevron-up-solid.svg">
-        </button>
-        <input class="dropdown" v-on:keyup.enter="onEnter_location" v-if="locationIsOpen" v-model="tree_location" placeholder="Enter tree location"/>
+      <div class="tree_cards">
+        <TreeCardsGrid/>
       </div>
-      <div class="filter">
-        <button @click="display_dropdown_age">{{ age_button_text }}
-          <img class="icon" v-if="!ageIsOpen" src="../assets/chevron-down-solid.svg">
-          <img class="icon" v-if="ageIsOpen" src="../assets/chevron-up-solid.svg">
-        </button>
-        <input class="dropdown" v-on:keyup.enter="onEnter_age" v-if="ageIsOpen" v-model="tree_age" placeholder="Enter tree age"/>
-      </div>
-      <div class="filter">
-        <button @click="display_dropdown_motivation">{{motivation}}
-          <img class="icon" v-if="!motivationIsOpen" src="../assets/chevron-down-solid.svg">
-          <img class="icon" v-if="motivationIsOpen" src="../assets/chevron-up-solid.svg">
-        </button>
-        <div class="dropdown_motivation" v-if="motivationIsOpen">
-          <button class="motivation_option" @click="select_motivation('motivation')">reset filter</button>
-          <button class="motivation_option" @click="select_motivation('gift')">gift</button>
-          <button class="motivation_option" @click="select_motivation('good will')">good will</button>
-          <button class="motivation_option" @click="select_motivation('agriculture')">agriculture</button>
-          <button class="motivation_option" @click="select_motivation('decoration')">decoration</button>
-          <button class="motivation_option" @click="select_motivation('other')">other</button>
-        </div>
-      </div>
-    </div>
-    <div class="tree_cards">
-      <TreeCardsGrid/>
     </div>
   </div>
+
 
 </template>
 
@@ -183,28 +186,31 @@ export default {
 </script>
 
 <style scoped>
+.wrapper {
+}
+.header{
+  height : 100px;
+  width: 100vw;
+  background-color: #1E704B;
+}
 .body{
   height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
-  background-color: #2c3e50;
-}
-.header{
-  height : 15vh;
-  width: 100vw;
-  background-color: #00bd7e;
+  background-color: white;
 }
 .filters{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  height: 10vh;
-  background-color: white;
+  height: 50px;
+  background-color: #D0C7C4;
 }
 .tree_cards{
   margin-top: 10px;
+  overflow-y: auto;
 }
 
 button:not(.dropdown_motivation button):not(.dropdown_type button) {
@@ -223,6 +229,10 @@ button:not(.dropdown_motivation button):not(.dropdown_type button) {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+}
+.filter button {
+  border: solid #040503 1px;
+
 }
 .dropdown{
   background-color: #f8f8f8;
@@ -297,9 +307,11 @@ button:not(.dropdown_motivation button):not(.dropdown_type button) {
 }
 
 button:hover {
-  background-color: grey !important;
+  background-color: #B2A38C !important;
 }
 
-
+.tree_cards {
+  height: 100%;
+}
 
 </style>
