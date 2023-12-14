@@ -8,5 +8,5 @@
     {"number": "3", "location": "Helsinki", "user": "Farmer", "motivation": "Agriculture", "type": "Mulberry", "date": "2023-12-08"},
     {"number": "5", "location": "Helsinki", "user": "Ecosia", "motivation": "GoodWill", "type": "Olive", "date": "2023-07-12"},
     {"number": "5", "location": "Helsinki", "user": "Ecosia", "motivation": "GoodWill", "type": "Pines", "date": "2023-08-12"},
-    {"number": "5", "location": "Helsinki", "user": "Ecosia", "motivation": "GoodWill", "type": "Other", "date": "2023-19-12"}
+    {"number": "5", "location": "Helsinki", "user": "Ecosia", "motivation": "GoodWill", "type": "Other", "date": "2023-09-12"}
 ]

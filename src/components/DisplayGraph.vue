@@ -49,6 +49,12 @@ export default {
         })
         .then(data => {
           this.rawData = data;
+          // Sort the data by date
+          function sortByDate(a, b) {
+            return new Date(a.date) - new Date(b.date);
+          }
+          this.rawData.sort(sortByDate);
+          // Format the data to fit AnyChart requirements
           this.formatData();
           // Generate the chart once the data has been formatted
           this.createChart();
@@ -67,23 +73,27 @@ export default {
     },
 
     formatData() {
-      // TODO: Sort data by date, see cumulatived number of trees
+      // TODO: See cumulatited number of trees
       const aggregatedData = {};
+      var prevmonth = this.rawData[0].date.substring(0, 7);
+      if (this.attribute == 'Type') {
+        aggregatedData[prevmonth] = { attributes: JSON.parse(JSON.stringify(this.types))};
+      }
+      if (this.attribute == 'Motivation') {
+        aggregatedData[prevmonth] = { attributes: JSON.parse(JSON.stringify(this.motivations))};
+      }
 
       this.rawData.forEach(item => {
         const month = item.date.substring(0, 7); // Get month from date
-        console.log(item.motivation);
+        if (!aggregatedData[month]) {
+          aggregatedData[month] = JSON.parse(JSON.stringify(aggregatedData[prevmonth]));
+          prevmonth = month;
+        }
 
         if (this.attribute == 'Type') {
-          if (!aggregatedData[month]) {
-            aggregatedData[month] = { attributes: JSON.parse(JSON.stringify(this.types))};
-          }
           aggregatedData[month].attributes[item.type] += parseInt(item.number, 10);
         }
         if (this.attribute == 'Motivation') {
-          if (!aggregatedData[month]) {
-            aggregatedData[month] = { attributes: JSON.parse(JSON.stringify(this.motivations))};
-          }
           aggregatedData[month].attributes[item.motivation] += parseInt(item.number, 10);
         }
         
