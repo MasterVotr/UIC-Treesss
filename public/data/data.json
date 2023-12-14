@@ -2,5 +2,11 @@
     {"number": "1", "location": "Helsinki", "user": "Louise", "motivation": "Gift", "type": "Oak", "date": "2023-10-20"},
     {"number": "5", "location": "Helsinki", "user": "Ecosia", "motivation": "GoodWill", "type": "Oak", "date": "2023-10-12"},
     {"number": "10", "location": "Helsinki", "user": "Ecosia", "motivation": "GoodWill", "type": "Oak", "date": "2023-09-22"},
-    {"number": "3", "location": "Helsinki", "user": "Louise", "motivation": "Gift", "type": "Willow", "date": "2023-12-08"}
+    {"number": "3", "location": "Helsinki", "user": "Louise", "motivation": "Gift", "type": "Willow", "date": "2023-12-06"},
+    {"number": "3", "location": "Helsinki", "user": "Farmer", "motivation": "Agriculture", "type": "Maple", "date": "2023-12-08"},
+    {"number": "3", "location": "Helsinki", "user": "Farmer", "motivation": "Agriculture", "type": "Ginkgo", "date": "2023-12-08"},
+    {"number": "3", "location": "Helsinki", "user": "Farmer", "motivation": "Agriculture", "type": "Mulberry", "date": "2023-12-08"},
+    {"number": "5", "location": "Helsinki", "user": "Ecosia", "motivation": "GoodWill", "type": "Olive", "date": "2023-07-12"},
+    {"number": "5", "location": "Helsinki", "user": "Ecosia", "motivation": "GoodWill", "type": "Pines", "date": "2023-08-12"},
+    {"number": "5", "location": "Helsinki", "user": "Ecosia", "motivation": "GoodWill", "type": "Other", "date": "2023-19-12"}
 ]

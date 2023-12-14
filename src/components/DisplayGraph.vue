@@ -26,6 +26,7 @@ export default {
       motivations: {Gift: 0, GoodWill: 0, Agriculture: 0, Decoration: 0, Other: 0},
       attribute: 'Type', // Select which view to see
       chart: AnyChart.area(),
+      palette: anychart.palettes.distinctColors().items(['#C58B59', '#F0DBCB', '#A5C188', '#665547', '#4C8077', '#402E32', '#AB7465', '#BAA89B']), // Create color palette
     };
   },
 
@@ -152,6 +153,9 @@ export default {
       // set titles for axises
       this.chart.xAxis().title(false);
       this.chart.yAxis().title('Number of trees');
+
+      // set color palette
+      this.chart.palette(this.palette);
 
       // set container id for the chart
       this.chart.container('anychart-container');

@@ -5,7 +5,7 @@ import DisplayGraph from "@/components/DisplayGraph.vue";
 </script>
 
 <template>
-  <TreeSearch/>
+  <DisplayGraph/>
 </template>
 
 <style scoped>
