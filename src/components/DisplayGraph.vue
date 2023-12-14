@@ -5,7 +5,7 @@
       <option value = Type>Type of tree</option>
       <option value = Motivation>Motivation</option>
     </select>
-    <div id="anychart-container"></div>
+    <div id="anychart-container" style="width: 700px; height: 500px;"></div>
   </div>
 </template>
 
@@ -58,6 +58,7 @@ export default {
           this.formatData();
           // Generate the chart once the data has been formatted
           this.createChart();
+          this.setChartData();
         })
         .catch(error => console.error('Erreur de chargement des données', error));
     },
@@ -69,7 +70,7 @@ export default {
       this.formattedData = [];
       this.chart.removeAllSeries();
       this.formatData();
-      this.createChart();
+      this.setChartData();
     },
 
     formatData() {
@@ -109,11 +110,6 @@ export default {
     },
 
     createChart() {
-      // TODO
-
-      // create data set
-      var dataSet = AnyChart.data.set(this.formattedData);
-
       // turn on the crosshair
       var crosshair = this.chart.crosshair();
       crosshair.enabled(true).yStroke(null).xStroke('#fff').zIndex(39);
@@ -124,38 +120,6 @@ export default {
 
       // set chart title text settings
       this.chart.title('Evolution of planted trees');
-
-      // helper function to setup label settings for all series
-      var setupSeriesLabels = function (series, name) {
-        series
-          .name(name)
-          .stroke('3 #fff 1')
-          .fill(function () {
-            return this.sourceColor + ' 0.8';
-          });
-        series.hovered().stroke('3 #fff 1');
-        series
-          .hovered()
-          .markers()
-          .enabled(true)
-          .type('circle')
-          .size(4)
-          .stroke('1.5 #fff');
-        series.markers().zIndex(100);
-      };
-
-      // temp variable to store series instance
-      var series;
-
-      for (let i = 1; i < this.formattedData[0].length; i++) {
-        series = this.chart.area(dataSet.mapAs({ x: 0, value: i }));
-        if (this.attribute == 'Type') {
-          setupSeriesLabels(series, Object.keys(this.types)[i-1]);
-        }
-        if (this.attribute == 'Motivation') {
-          setupSeriesLabels(series, Object.keys(this.motivations)[i-1]);
-        }
-      }
 
       // turn on legend
       this.chart.legend().enabled(true).fontSize(13).padding([0, 0, 20, 0]);
@@ -169,10 +133,47 @@ export default {
 
       // set container id for the chart
       this.chart.container('anychart-container');
+    },
+
+    setupSeriesLabels(series, name) {
+      // helper function to setup label settings for all series  
+      series
+        .name(name)
+        .stroke('3 #fff 1')
+        .fill(function () {
+          return this.sourceColor + ' 0.8';
+        });
+      series.hovered().stroke('3 #fff 1');
+      series
+        .hovered()
+        .markers()
+        .enabled(true)
+        .type('circle')
+        .size(4)
+        .stroke('1.5 #fff');
+      series.markers().zIndex(100);
+    },
+
+    setChartData() {
+      // create data set
+      var dataSet = AnyChart.data.set(this.formattedData);
+      
+      // temp variable to store series instance
+      var series;
+
+      for (let i = 1; i < this.formattedData[0].length; i++) {
+        series = this.chart.area(dataSet.mapAs({ x: 0, value: i }));
+        if (this.attribute == 'Type') {
+          this.setupSeriesLabels(series, Object.keys(this.types)[i-1]);
+        }
+        if (this.attribute == 'Motivation') {
+          this.setupSeriesLabels(series, Object.keys(this.motivations)[i-1]);
+        }
+      }
 
       // initiate chart drawing
       this.chart.draw();
-    },
+    }
   },
 };
 </script>
