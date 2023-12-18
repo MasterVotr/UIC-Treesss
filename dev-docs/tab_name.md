@@ -1,7 +1,7 @@
 homepage 			- Treesss
-add tree 			- Add Trees
-add multiple trees 	- Add Trees 
-file add tree 		- Add Trees
-cut tree 			- Cut Trees
-statistics 			- Show Statistics
-search tree 		- Search Trees
+add tree 			- AddTrees
+add multiple trees 	- AddTrees 
+file add tree 		- AddTrees
+cut tree 			- CutTrees
+statistics 			- ShowStatistics
+search tree 		- SearchTrees
