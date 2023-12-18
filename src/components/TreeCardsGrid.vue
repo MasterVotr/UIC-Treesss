@@ -60,7 +60,7 @@ export default {
     sendToStore(item) {
       this.updateAge(item.age);
       this.updateId(item.id);
-      this.updateType(item.type);
+      this.updateType(item.treeType);
       this.updateOwner(item.owner);
       this.updateLocation(item.location);
       this.updateMotivation(item.motivation);

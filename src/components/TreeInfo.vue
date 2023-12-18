@@ -15,6 +15,8 @@
       </div>
       <div class="image">
         <img src="../assets/tree_types/maple.jpg">
+        <p>{{type}} tree</p>
+
       </div>
     </div>
     <div class="card_lowerbody">
@@ -103,8 +105,12 @@ export default {
   margin-left: 30px;
 }
 
-p {
+p:not(.image p) {
   margin-top: 10px;
+}
+
+.image p {
+  margin-left: 90px;
 }
 
 .image {
