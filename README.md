@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # treeesss
 
 This template should help get you started developing with Vue 3 in Vite.
@@ -29,11 +27,5 @@ npm run dev
 ```sh
 npm run build
 ```
-=======
-# UIC-Treesss
-Aalto yliopisto - User Inteface Construction - Treesss
->>>>>>> f84c920 (Initial commit)
-=======
 # Treesss
 ## Aalto university - User Inteface Construction - Treesss
->>>>>>> f3555e7 (Update README.md)
