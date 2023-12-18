@@ -9,18 +9,18 @@
 <template>
   <main>
     <div id="top">
-      <button id="top-button-down"  onclick="smoothScroll('middle');">Move down</a>
+      <button id="top-button-down" @click="smoothScroll('middle');">Move down</button>
     </div>
     <div id="middle">
-      <div class="arrow-up" id="middle-arrow-up" onclick="smoothScroll('top');"></div>
-      <div class="arrow-down" id="middle-arrow-down" onclick="smoothScroll('bottom-arrow-up');"></div>
-      <button class="button-routes" id="button-add" onclick="window.location.href='/AddTrees';">AddTrees</a>
-      <button class="button-routes" id="button-cut" onclick="window.location.href='/CutTrees';">CutTrees</a>
-      <button class="button-routes" id="button-search" onclick="window.location.href='/SearchTrees';">SearchTrees</a>
-      <button class="button-routes" id="button-stats" onclick="window.location.href='/ShowStatistics';">ShowStatistics</a>
+      <div class="arrow-up" id="middle-arrow-up" @click="smoothScroll('top');"></div>
+      <div class="arrow-down" id="middle-arrow-down" @click="smoothScroll('bottom-arrow-up');"></div>
+      <button class="button-routes" id="button-add" @nclick="window.location.href='/AddTrees';">AddTrees</button>
+      <button class="button-routes" id="button-cut" @click="window.location.href='/CutTrees';">CutTrees</button>
+      <button class="button-routes" id="button-search" @click="window.location.href='/SearchTrees';">SearchTrees</button>
+      <button class="button-routes" id="button-stats" @click="window.location.href='/ShowStatistics';">ShowStatistics</button>
     </div>
     <div id="bottom">
-      <div class="arrow-up" id="bottom-arrow-up" onclick="smoothScroll('middle');"></div>
+      <div class="arrow-up" id="bottom-arrow-up" @click="smoothScroll('middle');"></div>
         <label id="label-luise">Luise Schnee</label>
         <label id="label-emilie">Emilie Tortel</label>
         <label id="label-yuan">Yuan Xiao</label>
