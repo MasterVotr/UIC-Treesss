@@ -4,6 +4,7 @@ import TreeCardsGrid from "@/components/TreeCardsGrid.vue";
 
 export default {
   name: "Home",
+  components: {Header},
   methods: {
     smoothScroll(elem_id){
       document.getElementById(elem_id).scrollIntoView({
@@ -16,27 +17,30 @@ export default {
 </script>
 
 <template>
-  <img src="../assets/home_background.png">
-  <main>
-    <div id="top">
-      <button id="top-button-down" @click="smoothScroll('middle')">Move down</button>
-    </div>
-    <div id="middle">
-      <div class="arrow-up" id="middle-arrow-up" @click="smoothScroll('top')"></div>
-      <div class="arrow-down" id="middle-arrow-down" @click="smoothScroll('bottom-arrow-up')"></div>
-      <router-link to="/Form"><button class="button-routes" id="button-add">AddTrees</button></router-link>
-      <router-link to="/Form"><button class="button-routes" id="button-cut">CutTrees</button></router-link>
-      <router-link to="/treeSearch"><button class="button-routes" id="button-search">SearchTrees</button></router-link>
-      <router-link to="/displayGraph"><button class="button-routes" id="button-stats" >ShowStatistics</button></router-link>
-    </div>
-    <div id="bottom">
-      <div class="arrow-up" id="bottom-arrow-up" @click="smoothScroll('middle')"></div>
+  <div class="wrapper">
+    <Header/>
+    <img src="../assets/home_background.png">
+    <main>
+      <div id="top">
+        <button id="top-button-down" @click="smoothScroll('middle')">Move down</button>
+      </div>
+      <div id="middle">
+        <div class="arrow-up" id="middle-arrow-up" @click="smoothScroll('top')"></div>
+        <div class="arrow-down" id="middle-arrow-down" @click="smoothScroll('bottom-arrow-up')"></div>
+        <router-link to="/Form"><button class="button-routes" id="button-add">AddTrees</button></router-link>
+        <router-link to="/Form"><button class="button-routes" id="button-cut">CutTrees</button></router-link>
+        <router-link to="/treeSearch"><button class="button-routes" id="button-search">SearchTrees</button></router-link>
+        <router-link to="/displayGraph"><button class="button-routes" id="button-stats" >ShowStatistics</button></router-link>
+      </div>
+      <div id="bottom">
+        <div class="arrow-up" id="bottom-arrow-up" @click="smoothScroll('middle')"></div>
         <label id="label-luise">Louise Schnee</label>
         <label id="label-emilie">Emilie Tortel</label>
         <label id="label-yuan">Yuan Xiao</label>
         <label id="label-jakub">Jakub Votrubec</label>
-    </div>
-  </main>
+      </div>
+    </main>
+  </div>
 </template>
 
 <style scoped>
@@ -45,8 +49,8 @@ export default {
       z-index: -1;
     }
     main {
-      position: absolute;
-      z-index: 2;
+      position: fixed;
+      z-index: 3;
     }
 
     body {
@@ -65,12 +69,14 @@ export default {
     }
 
     #top {
-      height: 1400px;
+      height: 0px;
     }
 
+
     #middle {
-      height: 1382px;
+      height: 800px;
     }
+
 
     #bottom {
       height: 1360px;
@@ -82,7 +88,6 @@ export default {
       box-sizing: border-box;
       margin-left: 650px;
       transform: rotate(-45deg);
-      margin-top: 0px;
     }
       
     .arrow-up:before {
@@ -185,39 +190,33 @@ export default {
     }
 
     button {
-      background: transparent;
+      /*background: transparent;*/
+      background-color: #1E704B;
       border: none !important;
       font-size:0;
       border: solid 1px;
-      position: absolute;
       width: 250px;
       height: 80px;
       cursor: pointer;
     }
 
     #button-add {
-      left: 9%;
-      top: 18%;
+      margin-left: 30px;
       transform: rotate(30deg);
     }
 
     #button-cut {
-      left: 80%;
-      top: 43%;
       transform: rotate(30deg);
     }
 
     #button-search {
       left: 5%;
-      top: 30%;
       transform: rotate(-30deg);
     }
 
     #button-stats {
       width: 300px;
       height: 90px;
-      left: 74%;
-      top: 28%;
       transform: rotate(-30deg);
     }
 
