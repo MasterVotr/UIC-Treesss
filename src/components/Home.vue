@@ -1,7 +1,9 @@
 <template>
-  <Header/>
-  <div>
-    home page
+  <div class="wrapper">
+    <Header/>
+    <div class="body">
+      home page
+    </div>
   </div>
 </template>
 
@@ -17,5 +19,8 @@ export default {
 </script>
 
 <style scoped>
-
+.body{
+  height: 100vh;
+  width: 100vw;
+}
 </style>

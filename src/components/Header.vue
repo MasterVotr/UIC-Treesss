@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="logo">
-      <router-link to="/"><p>hey</p></router-link>
+      <router-link to="/"><p><img src="../assets/logo_trees.jpg"></p></router-link>
     </div>
     <div class="tabs">
       <router-link to="/"><button>Add trees(s)</button></router-link>
@@ -44,5 +44,12 @@ button {
 button:hover{
   cursor: pointer;
   color: #B2A38C;
+}
+.logo img {
+  width: 10%;
+  border-radius: 50px;
+}
+.logo{
+  margin-left: 20px;
 }
 </style>
