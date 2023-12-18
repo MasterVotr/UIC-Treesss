@@ -16,6 +16,7 @@ export default {
 </script>
 
 <template>
+  <img src="../assets/home_background.png">
   <main>
     <div id="top">
       <button id="top-button-down" @click="smoothScroll('middle')">Move down</button>
@@ -23,10 +24,10 @@ export default {
     <div id="middle">
       <div class="arrow-up" id="middle-arrow-up" @click="smoothScroll('top')"></div>
       <div class="arrow-down" id="middle-arrow-down" @click="smoothScroll('bottom-arrow-up')"></div>
-      <button class="button-routes" id="button-add" @click="window.location.href='/AddTrees'">AddTrees</button>
-      <button class="button-routes" id="button-cut" @click="window.location.href='/CutTrees'">CutTrees</button>
-      <button class="button-routes" id="button-search" @click="window.location.href='/SearchTrees'">SearchTrees</button>
-      <button class="button-routes" id="button-stats" @click="window.location.href='/ShowStatistics'">ShowStatistics</button>
+      <router-link to="/Form"><button class="button-routes" id="button-add">AddTrees</button></router-link>
+      <router-link to="/Form"><button class="button-routes" id="button-cut">CutTrees</button></router-link>
+      <router-link to="/treeSearch"><button class="button-routes" id="button-search">SearchTrees</button></router-link>
+      <router-link to="/displayGraph"><button class="button-routes" id="button-stats" >ShowStatistics</button></router-link>
     </div>
     <div id="bottom">
       <div class="arrow-up" id="bottom-arrow-up" @click="smoothScroll('middle')"></div>
@@ -39,8 +40,17 @@ export default {
 </template>
 
 <style scoped>
+    img {
+      width: 100vw;
+      z-index: -1;
+    }
+    main {
+      position: absolute;
+      z-index: 2;
+    }
+
     body {
-      background-image: url("../assets/home_background.png");
+      /*background-image: url("../assets/home_background.png");*/
       background-color: grey;
       min-height: 4147px;
       background-position: center;
@@ -70,8 +80,9 @@ export default {
       width: 6vmin;
       height: 6vmin;
       box-sizing: border-box;
-      left: 50%;
+      margin-left: 650px;
       transform: rotate(-45deg);
+      margin-top: 0px;
     }
       
     .arrow-up:before {
