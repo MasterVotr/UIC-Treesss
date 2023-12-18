@@ -20,10 +20,10 @@ export default {
     <div id="middle">
       <div class="arrow-up" id="middle-arrow-up" @click="smoothScroll('top')"></div>
       <div class="arrow-down" id="middle-arrow-down" @click="smoothScroll('bottom-arrow-up')"></div>
-      <button class="button-routes" id="button-add" @click="window.location.href='/AddTrees';">AddTrees</button>
-      <button class="button-routes" id="button-cut" @click="window.location.href='/CutTrees';">CutTrees</button>
-      <button class="button-routes" id="button-search" @click="window.location.href='/SearchTrees';">SearchTrees</button>
-      <button class="button-routes" id="button-stats" @click="window.location.href='/ShowStatistics';">ShowStatistics</button>
+      <button class="button-routes" id="button-add" @click="window.location.href='/AddTrees'">AddTrees</button>
+      <button class="button-routes" id="button-cut" @click="window.location.href='/CutTrees'">CutTrees</button>
+      <button class="button-routes" id="button-search" @click="window.location.href='/SearchTrees'">SearchTrees</button>
+      <button class="button-routes" id="button-stats" @click="window.location.href='/ShowStatistics'">ShowStatistics</button>
     </div>
     <div id="bottom">
       <div class="arrow-up" id="bottom-arrow-up" @click="smoothScroll('middle')"></div>
@@ -63,7 +63,7 @@ export default {
       height: 1360px;
     }
 
-    div.arrow-up {
+    .arrow-up {
       width: 6vmin;
       height: 6vmin;
       box-sizing: border-box;
@@ -71,7 +71,7 @@ export default {
       transform: rotate(-45deg);
     }
       
-    div.arrow-up.before {
+    .arrow-up:before {
         content: '';
         width: 100%;
         height: 100%;
@@ -83,7 +83,7 @@ export default {
         transform-origin: 100% 0;
     }
       
-    div.arrow-up.after {
+    .arrow-up:after {
         content: '';
         float: left;
         position: relative;
@@ -97,19 +97,19 @@ export default {
         transition:.2s ease;
     }
       
-    div.arrow-up.hover.after {
+    .arrow-up:hover:after {
         transform: rotate(45deg);
         border-color: #f6e7cb;
         height: 120%;
         right: 4%;
     }
 
-    div.arrow-up.hover.before {
+    .arrow-up:hover:before {
         border-color: #f6e7cb;
         transform: scale(.8);
     }
 
-    div.arrow-down {
+    .arrow-down {
       width: 6vmin;
       height: 6vmin;
       box-sizing: border-box;
@@ -117,7 +117,7 @@ export default {
       transform: rotate(135deg);
     }
       
-    div.arrow-up.before {
+    .arrow-up:before {
       content: '';
       width: 100%;
       height: 100%;
@@ -129,7 +129,7 @@ export default {
       transform-origin: 100% 0;
     }
       
-    div.arrow-up.after {
+    .arrow-up:after {
       content: '';
       float: left;
       position: relative;
@@ -143,14 +143,14 @@ export default {
       transition:.2s ease;
     }
       
-    div.arrow-u.hover.after {
+    .arrow-up:hover:after {
       transform: rotate(45deg);
       border-color: #f6e7cb;
       height: 120%;
       right: 4%;
     }
 
-    div.arrow-up.hover.before {
+    .arrow-up:hover:before {
       border-color: #f6e7cb;
       transform: scale(.8);
     }
