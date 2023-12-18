@@ -5,6 +5,7 @@ import TreeSearch from "@/components/TreeSearch.vue";
 
 <template>
   <TreeSearch/>
+  <!--<router-view/>-->
 </template>
 
 <style scoped>

@@ -10,7 +10,7 @@
           <p class="card-text">Age : {{item.age}}</p>
           <p class="card-text">Owner : {{item.owner}}</p>
           <p class="card-text">Motivation : {{item.motivation}}</p>
-          <button class="seeMore_button">See more</button>
+          <button class="seeMore_button" @click="sendToStore(item)">See more</button>
         </div>
       </div>
     </div>
@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import {mapMutations} from "vuex";
+
 export default {
   name: "TreeCardsGrid",
   data() {
@@ -55,6 +57,24 @@ export default {
       ]
     };
   },
+  methods: {
+    ...mapMutations(["updateId"]),
+    ...mapMutations(["updateAge"]),
+    ...mapMutations(["updateType"]),
+    ...mapMutations(["updateOwner"]),
+    ...mapMutations(["updateLocation"]),
+    ...mapMutations(["updateMotivation"]),
+    ...mapMutations(["updateDivState"]),
+    sendToStore(item) {
+      this.updateAge(item.age);
+      this.updateId(item.id);
+      this.updateType(item.type);
+      this.updateOwner(item.owner);
+      this.updateLocation(item.location);
+      this.updateMotivation(item.motivation);
+      this.updateDivState(true);
+    }
+  }
 }
 </script>
 

@@ -1,9 +1,10 @@
 <template>
   <div class="wrapper">
-    <div class="header">
-      header
-    </div>
+    <Header/>
     <div class="body">
+      <div v-if="divIsOpen" class="tree_card">
+        <TreeInfo/>
+      </div>
       <div class="filters">
         <div class="filter">
           <button class="id_button" @click="display_dropdown_id">{{id_button_text}}
@@ -61,7 +62,6 @@
                 willow
               </button>
               <button @click="select_type('other')">
-                <img src="../assets/logo.svg">
                 other
               </button>
             </div>
@@ -108,10 +108,13 @@
 
 <script>
 import TreeCardsGrid from "@/components/TreeCardsGrid.vue";
+import Header from "@/components/Header.vue";
+import TreeInfo from "@/components/TreeInfo.vue";
+import {mapGetters} from "vuex";
 
 export default {
   name: "TreeSearch",
-  components: {TreeCardsGrid},
+  components: {TreeInfo, TreeCardsGrid, Header},
   data: function () {
     return{
       idIsOpen : false,
@@ -125,7 +128,7 @@ export default {
       tree_id : '',
       tree_owner : '',
       tree_age : '',
-      tree_location : ''
+      tree_location : '',
     }
   },
   computed: {
@@ -140,9 +143,13 @@ export default {
     },
     age_button_text() {
       return this.tree_age.trim() !== '' ? this.tree_age : 'age';
+    },
+    divIsOpen() {
+      return this.getDivState();
     }
   },
   methods:{
+    ...mapGetters(["getDivState"]),
     display_dropdown_id() {
       this.idIsOpen = !this.idIsOpen;
     },
@@ -188,11 +195,7 @@ export default {
 <style scoped>
 .wrapper {
 }
-.header{
-  height : 100px;
-  width: 100vw;
-  background-color: #1E704B;
-}
+
 .body{
   height: 100vh;
   width: 100vw;
@@ -241,7 +244,7 @@ button:not(.dropdown_motivation button):not(.dropdown_type button) {
   z-index: 1;
   width: 110px;
   border-radius: 8px;
-  border: solid black 1px;
+  border: solid #B2A38C 1px;
 }
 
 .dropdown_type {
@@ -263,9 +266,12 @@ button:not(.dropdown_motivation button):not(.dropdown_type button) {
   align-items: center;
 }
 .motivation_option {
-  border: solid black 1px;
   width: 110px;
   height: 25px;
+}
+.dropdown_motivation button {
+  border: solid #B2A38C 1px;
+  background-color: white;
 }
 .motivation_option:first-child {
   border-radius: 5px 5px 0px 0px;
@@ -286,7 +292,7 @@ button:not(.dropdown_motivation button):not(.dropdown_type button) {
   width: 200px;
   height: 50px;
   border-radius: 0px;
-  border : solid black 1px;
+  border : solid #B2A38C 1px;
   background-color: white;
 }
 
@@ -308,10 +314,19 @@ button:not(.dropdown_motivation button):not(.dropdown_type button) {
 
 button:hover {
   background-color: #B2A38C !important;
+  cursor: pointer;
 }
 
 .tree_cards {
   height: 100%;
+}
+
+.tree_card {
+  position: absolute;
+  z-index: 2;
+  width: 100vw;
+  height: 80%;
+  margin-top: 8px;
 }
 
 </style>
