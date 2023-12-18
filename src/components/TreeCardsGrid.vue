@@ -25,35 +25,26 @@ export default {
   data() {
     return {
       items: [
-        { id: 1, location: 'Finland', owner: 'unknown', treeType: 'ginko', age: '100', motivation : 'aaa', description : '', src: 'ginko.jpg'},
-        { id: 2, location: 'Canada', owner: 'associationA', treeType: 'maple', age: '85', motivation : 'aaa', description : '', src: 'maple.jpg'},
-        { id: 3, location: 'France', owner: 'unknown', treeType: 'mulberry', age: '10', motivation : 'aaa', description : '', src: 'mulberry.jpg'},
-        { id: 4, location: 'Finland', owner: 'companyB', treeType: 'oak', age: '70', motivation : 'aaa', description : '', src: 'oak.jpg'},
-        { id: 5, location: 'Italy', owner: 'companyB', treeType: 'olive', age: '97', motivation : 'aaa', description : '', src: 'olive.jpg'},
-        { id: 6, location: 'USA', owner: 'associationA', treeType: 'palm', age: '35', motivation : 'aaa', description : '', src: 'palm.jpeg'},
-        { id: 7, location: 'USA', owner: 'associationA', treeType: 'pines', age: '35', motivation : 'aaa', description : '', src: 'pines.jpg'},
-        { id: 8, location: 'Finland', owner: 'unknown', treeType: 'ginko', age: '100', motivation : 'aaa', description : '', src: 'ginko.jpg'},
-        { id: 9, location: 'Canada', owner: 'associationA', treeType: 'maple', age: '85', motivation : 'aaa', description : '', src: 'maple.jpg'},
-        { id: 10, location: 'France', owner: 'unknown', treeType: 'mulberry', age: '10', motivation : 'aaa', description : '', src: 'mulberry.jpg'},
-        { id: 11, location: 'Finland', owner: 'companyB', treeType: 'oak', age: '70', motivation : 'aaa', description : '', src: 'oak.jpg'},
-        { id: 12, location: 'Italy', owner: 'companyB', treeType: 'olive', age: '97', motivation : 'aaa', description : '', src: 'olive.jpg'},
-        { id: 13, location: 'USA', owner: 'associationA', treeType: 'palm', age: '35', motivation : 'aaa', description : '', src: 'palm.jpeg'},
-        { id: 14, location: 'USA', owner: 'associationA', treeType: 'pines', age: '35', motivation : 'aaa', description : '', src: 'pines.jpg'},
-        { id: 1, location: 'Finland', owner: 'unknown', treeType: 'ginko', age: '100', motivation : 'aaa', description : '', src: 'ginko.jpg'},
-        { id: 2, location: 'Canada', owner: 'associationA', treeType: 'maple', age: '85', motivation : 'aaa', description : '', src: 'maple.jpg'},
-        { id: 3, location: 'France', owner: 'unknown', treeType: 'mulberry', age: '10', motivation : 'aaa', description : '', src: 'mulberry.jpg'},
-        { id: 4, location: 'Finland', owner: 'companyB', treeType: 'oak', age: '70', motivation : 'aaa', description : '', src: 'oak.jpg'},
-        { id: 5, location: 'Italy', owner: 'companyB', treeType: 'olive', age: '97', motivation : 'aaa', description : '', src: 'olive.jpg'},
-        { id: 6, location: 'USA', owner: 'associationA', treeType: 'palm', age: '35', motivation : 'aaa', description : '', src: 'palm.jpeg'},
-        { id: 7, location: 'USA', owner: 'associationA', treeType: 'pines', age: '35', motivation : 'aaa', description : '', src: 'pines.jpg'},
-        { id: 8, location: 'Finland', owner: 'unknown', treeType: 'ginko', age: '100', motivation : 'aaa', description : '', src: 'ginko.jpg'},
-        { id: 9, location: 'Canada', owner: 'associationA', treeType: 'maple', age: '85', motivation : 'aaa', description : '', src: 'maple.jpg'},
-        { id: 10, location: 'France', owner: 'unknown', treeType: 'mulberry', age: '10', motivation : 'aaa', description : '', src: 'mulberry.jpg'},
-        { id: 11, location: 'Finland', owner: 'companyB', treeType: 'oak', age: '70', motivation : 'aaa', description : '', src: 'oak.jpg'},
-        { id: 12, location: 'Italy', owner: 'companyB', treeType: 'olive', age: '97', motivation : 'aaa', description : '', src: 'olive.jpg'},
-        { id: 13, location: 'USA', owner: 'associationA', treeType: 'palm', age: '35', motivation : 'aaa', description : '', src: 'palm.jpeg'},
-        { id: 14, location: 'USA', owner: 'associationA', treeType: 'pines', age: '35', motivation : 'aaa', description : '', src: 'pines.jpg'},
-        // Add more items as needed
+        { id: 1, location: 'City A', owner: 'John Doe', treeType: 'ginko', age: '25', motivation: 'gift', description: 'A beautiful tree in the city center.' },
+        { id: 2, location: 'Suburb B', owner: 'Jane Smith', treeType: 'oak', age: '40', motivation: 'agriculture', description: 'An old oak tree in the backyard.' },
+        { id: 3, location: 'Town C', owner: 'Community Association', treeType: 'maple', age: '30', motivation: 'decoration', description: 'A row of maple trees along the street.' },
+        { id: 4, location: 'Village D', owner: 'GreenThumb Company', treeType: 'palm', age: '15', motivation: 'good will', description: 'Exotic palm trees planted in the village park.' },
+        { id: 5, location: 'City E', owner: 'Anonymous', treeType: 'willow', age: '18', motivation: 'other', description: 'A willow tree by the riverbank.' },
+        { id: 6, location: 'Suburb F', owner: 'Tree Enthusiast', treeType: 'olive', age: '22', motivation: 'gift', description: 'A flourishing olive tree in the backyard.' },
+        { id: 7, location: 'Town G', owner: 'Environmental Group', treeType: 'pines', age: '50', motivation: 'agriculture', description: 'A dense forest of pine trees.' },
+        { id: 8, location: 'Village H', owner: 'Local School', treeType: 'mulberry', age: '12', motivation: 'decoration', description: 'Young mulberry trees in the school garden.' },
+        { id: 9, location: 'City I', owner: 'Private Landowner', treeType: 'other', age: 'Unknown', motivation: 'other', description: 'An unidentified tree on private property.' },
+        { id: 10, location: 'Suburb J', owner: 'Nature Reserve', treeType: 'ginko', age: '30', motivation: 'gift', description: 'Ginko trees in a suburban nature reserve.' },
+        { id: 11, location: 'Town K', owner: 'Arborist Association', treeType: 'oak', age: '45', motivation: 'good will', description: 'Mature oak trees maintained by arborists.' },
+        { id: 12, location: 'Village L', owner: 'Citizens Group', treeType: 'willow', age: '20', motivation: 'agriculture', description: 'Willow trees planted for soil erosion control.' },
+        { id: 13, location: 'City M', owner: 'Green Initiative', treeType: 'palm', age: '17', motivation: 'decoration', description: 'Palms enhancing the cityscape.' },
+        { id: 14, location: 'Suburb N', owner: 'Private Resident', treeType: 'maple', age: '35', motivation: 'gift', description: 'Maple trees in a suburban garden.' },
+        { id: 15, location: 'Town O', owner: 'Botanical Garden', treeType: 'olive', age: '28', motivation: 'good will', description: 'Olive trees in a botanical garden.' },
+        { id: 16, location: 'Village P', owner: 'Community Greening', treeType: 'pines', age: '40', motivation: 'agriculture', description: 'A community grove of pine trees.' },
+        { id: 17, location: 'City Q', owner: 'Urban Planner', treeType: 'mulberry', age: '15', motivation: 'decoration', description: 'Mulberry trees lining urban streets.' },
+        { id: 18, location: 'Suburb R', owner: 'Residential Community', treeType: 'other', age: 'Unknown', motivation: 'other', description: 'Various trees in a residential community.' },
+        { id: 19, location: 'Suburb S', owner: 'Nature Lover', treeType: 'ginko', age: '35', motivation: 'gift', description: 'A majestic ginko tree in a suburban garden.' },
+        { id: 20, location: 'City T', owner: 'Green Company', treeType: 'palm', age: '25', motivation: 'good will', description: 'Palms lining the streets of the city center.' }
       ]
     };
   },
@@ -65,6 +56,7 @@ export default {
     ...mapMutations(["updateLocation"]),
     ...mapMutations(["updateMotivation"]),
     ...mapMutations(["updateDivState"]),
+    ...mapMutations(["updateDescription"]),
     sendToStore(item) {
       this.updateAge(item.age);
       this.updateId(item.id);
@@ -73,6 +65,7 @@ export default {
       this.updateLocation(item.location);
       this.updateMotivation(item.motivation);
       this.updateDivState(true);
+      this.updateDescription((item.description));
     }
   }
 }
@@ -81,7 +74,7 @@ export default {
 <style scoped>
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(7, 1fr); /* Adjust the number of columns as needed */
+  grid-template-columns: repeat(6, 1fr); /* Adjust the number of columns as needed */
   gap: 10px; /* Adjust the gap between items */
   margin-left: 2%;
   height: 100%;
@@ -97,8 +90,8 @@ export default {
 */
 
 .card{
-  width: 10rem;
-  height: 19rem;
+  width: 12rem;
+  height: 21rem;
   background-color: #D0C7C4;
   border-radius: 10px;
   font-size: smaller;
@@ -124,10 +117,10 @@ export default {
   background-color: white;
   border: solid #1E704B 1px;
   border-radius: 10px;
-  margin-left: 5px;
+  margin-left: 10px;
   margin-top: 5px;
   height: 25px;
-  width: 150px;
+  width: 170px;
 }
 
 .seeMore_button:hover {

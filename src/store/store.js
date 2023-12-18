@@ -8,6 +8,7 @@ export default createStore({
         type: '',
         age: '',
         motivation: '',
+        description: '',
         divIsOpen: false,
     },
     getters: {
@@ -31,6 +32,9 @@ export default createStore({
         },
         getDivState(state) {
             return state.divIsOpen;
+        },
+        getDescription(state) {
+            return state.description;
         }
     },
     mutations : {
@@ -54,6 +58,9 @@ export default createStore({
         },
         updateDivState(state, divIsOpen) {
             state.divIsOpen = divIsOpen;
+        },
+        updateDescription(state, description) {
+            state.description = description;
         }
     }
 })

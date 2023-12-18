@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="card_lowerbody">
-      description
+      {{ description }}
     </div>
 
   </div>
@@ -37,6 +37,7 @@ export default {
       id: '',
       motivation: '',
       type: '',
+      description: '',
     }
   },
   methods: {
@@ -47,6 +48,7 @@ export default {
     ...mapGetters(["getLocation"]),
     ...mapGetters(["getMotivation"]),
     ...mapMutations(["updateDivState"]),
+    ...mapGetters(["getDescription"]),
     closeDiv() {
       this.updateDivState(false);
     }
@@ -58,6 +60,7 @@ export default {
     this.id = this.getId();
     this.motivation = this.getMotivation();
     this.type = this.getType();
+    this.description = this.getDescription();
   }
 }
 </script>
