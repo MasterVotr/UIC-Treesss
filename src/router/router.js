@@ -2,6 +2,7 @@ import {createRouter, createWebHashHistory} from 'vue-router'
 import TreeSearch from "@/components/TreeSearch.vue";
 import Home from "@/components/Home.vue";
 import DisplayGraph from "@/components/DisplayGraph.vue";
+import Form from "@/components/Form.vue";
 
 const routes = [
     {
@@ -18,6 +19,11 @@ const routes = [
         path:'/displayGraph',
         name: 'displayGraph',
         component: DisplayGraph
+    },
+    {
+        path: '/form',
+        name: 'form',
+        component: Form
     }
 ]
 

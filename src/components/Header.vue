@@ -4,7 +4,7 @@
       <router-link to="/"><p><img src="../assets/logo_trees.jpg"></p></router-link>
     </div>
     <div class="tabs">
-      <router-link to="/"><button>Add trees(s)</button></router-link>
+      <router-link to="/form"><button>Add trees(s)</button></router-link>
       <router-link to="/displayGraph"><button>Show statistics</button></router-link>
       <router-link to="/treeSearch"><button>Search a tree</button></router-link>
     </div>
