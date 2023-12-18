@@ -5,12 +5,9 @@ import DisplayGraph from "@/components/DisplayGraph.vue";
 </script>
 
 <template>
-<<<<<<< HEAD
   <!--<TreeSearch/>-->
   <router-view/>
-=======
-  <DisplayGraph/>
->>>>>>> display-graph
+  <!--<DisplayGraph/>-->
 </template>
 
 <style scoped>
