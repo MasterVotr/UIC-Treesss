@@ -63,8 +63,9 @@
       box-sizing: border-box;
       left: 50%;
       transform: rotate(-45deg);
+    }
       
-      &::before {
+    div.arrow-up.before {
         content: '';
         width: 100%;
         height: 100%;
@@ -74,10 +75,9 @@
         transition: .2s ease;
         display: block;
         transform-origin: 100% 0;
-      }
-
+    }
       
-      &:after {
+    div.arrow-up.after {
         content: '';
         float: left;
         position: relative;
@@ -89,18 +89,18 @@
         border-color: #000000;
         transform-origin: 100% 0;
         transition:.2s ease;
-      }
+    }
       
-      &:hover::after {
+    div.arrow-up.hover.after {
         transform: rotate(45deg);
         border-color: #f6e7cb;
         height: 120%;
         right: 4%;
-      }
-      &:hover::before {
+    }
+
+    div.arrow-up.hover.before {
         border-color: #f6e7cb;
         transform: scale(.8);
-      }
     }
 
     div.arrow-down {
@@ -109,44 +109,44 @@
       box-sizing: border-box;
       left: 50%;
       transform: rotate(135deg);
+    }
       
-      &::before {
-        content: '';
-        width: 100%;
-        height: 100%;
-        border-width: .8vmin .8vmin 0 0;
-        border-style: solid;
-        border-color: #000000;
-        transition: .2s ease;
-        display: block;
-        transform-origin: 100% 0;
-      }
+    div.arrow-up.before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      border-width: .8vmin .8vmin 0 0;
+      border-style: solid;
+      border-color: #000000;
+      transition: .2s ease;
+      display: block;
+      transform-origin: 100% 0;
+    }
+      
+    div.arrow-up.after {
+      content: '';
+      float: left;
+      position: relative;
+      top: -100%;
+      width: 100%;
+      height: 100%;
+      border-width: 0 .8vmin 0 0;
+      border-style: solid;
+      border-color: #000000;
+      transform-origin: 100% 0;
+      transition:.2s ease;
+    }
+      
+    div.arrow-up.hover.after {
+      transform: rotate(45deg);
+      border-color: #f6e7cb;
+      height: 120%;
+      right: 4%;
+    }
 
-      
-      &:after {
-        content: '';
-        float: left;
-        position: relative;
-        top: -100%;
-        width: 100%;
-        height: 100%;
-        border-width: 0 .8vmin 0 0;
-        border-style: solid;
-        border-color: #000000;
-        transform-origin: 100% 0;
-        transition:.2s ease;
-      }
-      
-      &:hover::after {
-        transform: rotate(45deg);
-        border-color: #f6e7cb;
-        height: 120%;
-        right: 4%;
-      }
-      &:hover::before {
-        border-color: #f6e7cb;
-        transform: scale(.8);
-      }
+    div.arrow-up.hover.before {
+      border-color: #f6e7cb;
+      transform: scale(.8);
     }
 
     #middle-arrow-up {
