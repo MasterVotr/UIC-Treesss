@@ -5,7 +5,7 @@
     </div>
     <div class="tabs">
       <router-link to="/"><button>Add trees(s)</button></router-link>
-      <button>Show statistics</button>
+      <router-link to="/displayGraph"><button>Show statistics</button></router-link>
       <router-link to="/treeSearch"><button>Search a tree</button></router-link>
     </div>
   </div>

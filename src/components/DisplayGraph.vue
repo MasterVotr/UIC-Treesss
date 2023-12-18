@@ -1,26 +1,32 @@
 <template>
-  <div class="display">
-    <div class="column left">
-      <div class="label-container">
-        <label for="attribute">View by</label>
+  <div class="wrapper">
+    <Header/>
+    <div class="display">
+      <div class="column left">
+        <div class="label-container">
+          <label for="attribute">View by</label>
+        </div>
+        <div class="select-container">
+          <select id="attribute" class="attribute" name="attribute" @change="updateAttribute">
+            <option value="Type">Type of tree</option>
+            <option value="Motivation">Motivation</option>
+          </select>
+        </div>
       </div>
-      <div class="select-container">
-        <select id="attribute" class="attribute" name="attribute" @change="updateAttribute">
-          <option value="Type">Type of tree</option>
-          <option value="Motivation">Motivation</option>
-        </select>
-      </div>
+      <div class="column right" id="anychart-container"></div>
     </div>
-    <div class="column right" id="anychart-container"></div>
   </div>
+
 </template>
 
 <script>
 import AnyChart from 'anychart';
+import Header from "@/components/Header.vue";
 export default {
   name: "DisplayGraph",
 
   components: {
+    Header,
     AnyChart,
   },
 
