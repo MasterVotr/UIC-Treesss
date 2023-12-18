@@ -1,27 +1,33 @@
-<script setup>
-  function smoothScroll(elem_id){
-    document.getElementById(elem_id).scrollIntoView({
+<script>
+export default {
+  name: "Home",
+  methods: {
+    smoothScroll(elem_id){
+      document.getElementById(elem_id).scrollIntoView({
       behavior: 'smooth'
-    });
+      });
+    }
   }
+}
+
 </script>
 
 <template>
   <main>
     <div id="top">
-      <button id="top-button-down" @click="smoothScroll('middle');">Move down</button>
+      <button id="top-button-down" @click="smoothScroll('middle')">Move down</button>
     </div>
     <div id="middle">
-      <div class="arrow-up" id="middle-arrow-up" @click="smoothScroll('top');"></div>
-      <div class="arrow-down" id="middle-arrow-down" @click="smoothScroll('bottom-arrow-up');"></div>
-      <button class="button-routes" id="button-add" @nclick="window.location.href='/AddTrees';">AddTrees</button>
+      <div class="arrow-up" id="middle-arrow-up" @click="smoothScroll('top')"></div>
+      <div class="arrow-down" id="middle-arrow-down" @click="smoothScroll('bottom-arrow-up')"></div>
+      <button class="button-routes" id="button-add" @click="window.location.href='/AddTrees';">AddTrees</button>
       <button class="button-routes" id="button-cut" @click="window.location.href='/CutTrees';">CutTrees</button>
       <button class="button-routes" id="button-search" @click="window.location.href='/SearchTrees';">SearchTrees</button>
       <button class="button-routes" id="button-stats" @click="window.location.href='/ShowStatistics';">ShowStatistics</button>
     </div>
     <div id="bottom">
-      <div class="arrow-up" id="bottom-arrow-up" @click="smoothScroll('middle');"></div>
-        <label id="label-luise">Luise Schnee</label>
+      <div class="arrow-up" id="bottom-arrow-up" @click="smoothScroll('middle')"></div>
+        <label id="label-luise">Louise Schnee</label>
         <label id="label-emilie">Emilie Tortel</label>
         <label id="label-yuan">Yuan Xiao</label>
         <label id="label-jakub">Jakub Votrubec</label>
@@ -137,7 +143,7 @@
       transition:.2s ease;
     }
       
-    div.arrow-up.hover.after {
+    div.arrow-u.hover.after {
       transform: rotate(45deg);
       border-color: #f6e7cb;
       height: 120%;

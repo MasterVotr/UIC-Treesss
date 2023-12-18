@@ -1,10 +1,11 @@
 <script setup>
 import TreeSearch from "@/components/TreeSearch.vue";
+import Home from "@/components/Home.vue";
 
 </script>
 
 <template>
-  <TreeSearch/>
+  <Home/>
 </template>
 
 <style scoped>
